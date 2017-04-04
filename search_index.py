@@ -10,6 +10,10 @@ writer.update_document(title=u"First document", path=u"/a", isin='1',
 writer.update_document(title=u"Second document", path=u"/b", isin='2',
                      content=u"The second one is even more interesting!")
 writer.commit()
+
+def new_feature():
+    pass
+
 from whoosh.qparser import QueryParser
 with ix.searcher() as searcher:
      query = QueryParser("content", ix.schema).parse("first")
